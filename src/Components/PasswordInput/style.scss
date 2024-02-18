@@ -1,0 +1,51 @@
+.password-input{
+
+    display: flex;
+    background-color: white;
+    border-radius: calc(1.5em + 8px);
+    transition: .3s;
+    margin-top: 4px;
+
+    &:has(input:focus){
+        box-shadow: 0 0 0px 4px #60bbe5;
+    }
+
+    i{
+        position: relative;
+        width: max-content;
+        height: 1.5em;
+        top: .5em;
+        left: .6em;
+        color:#60bbe5;
+
+    }
+
+    input{
+        margin-top: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .visibility-on {
+        &::after {
+            content: url("./visibilityOn.svg");
+            filter: invert(43%) sepia(99%) saturate(2779%) hue-rotate(173deg) brightness(98%) contrast(92%);
+        }
+    }
+
+    .visibility-off {
+        &::after {
+            content: url("./visibilityOff.svg");
+            filter: invert(43%) sepia(99%) saturate(2779%) hue-rotate(173deg) brightness(98%) contrast(92%);
+        }
+    }
+
+}
+
+@media (max-width: 350px) {
+
+    .password-input i{
+        top: .4em;
+        left: -1vw;
+    }
+
+}
